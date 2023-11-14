@@ -2,9 +2,9 @@
 
 .border-link {
   text-decoration: none;
-  border: 1px solid #27ae60; /* Adjust the border thickness here (1px) */
+  border: .5px solid #27ae60; /* Adjust the border thickness here (1px) */
   padding: 5px 10px;
-  border-radius: 3px;
+  border-radius: 2px;
   color: black;
   transition: border 0.3s, color 0.3s;
 }
