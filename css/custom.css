@@ -1,0 +1,13 @@
+.border-link {
+  text-decoration: none;
+  border: 2px solid #3498db;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #3498db;
+  transition: background 0.3s, color 0.3s;
+}
+
+.border-link:hover {
+  background-color: #3498db;
+  color: white;
+}
