@@ -1,16 +1,17 @@
 /** custom.css  */
 
-
 .border-link {
   text-decoration: none;
-  border: 2px solid #3498db;
+  border: 1px solid #3498db; /* Adjust the border thickness here (1px) */
   padding: 5px 10px;
   border-radius: 5px;
   color: #3498db;
-  transition: background 0.3s, color 0.3s;
+  transition: border 0.3s, color 0.3s;
 }
 
 .border-link:hover {
-  background-color: #3498db;
-  color: white;
+  border: 2px solid #3498db; /* Restore the thicker border on hover (2px) */
+  color: #3498db;
+  background-color: transparent; /* Keep the background color transparent on hover */
 }
+
