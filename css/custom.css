@@ -19,12 +19,13 @@
 
 .italic-text {
   font-style: italic;
-  color: black;
+  color: #27ae60;
   text-decoration: none;
 }
 
 .italic-text:hover {
   font-style: italic;
   color: #27ae60;
+  font-weight: bold;
 }
 
