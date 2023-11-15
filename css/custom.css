@@ -19,5 +19,11 @@
 
 .italic-text {
   font-style: italic;
+  color: black;
+}
+
+.border-link:hover {
+  font-style: italic;
+  color: #27ae60;
 }
 
