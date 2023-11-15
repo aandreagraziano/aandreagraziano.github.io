@@ -15,3 +15,9 @@
   background-color: transparent; /* Keep the background color transparent on hover */
 }
 
+
+
+.italic-text {
+  font-style: italic;
+}
+
