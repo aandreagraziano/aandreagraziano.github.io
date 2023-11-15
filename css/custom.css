@@ -23,7 +23,7 @@
   text-decoration: none;
 }
 
-.border-link:hover {
+.italic-text:hover {
   font-style: italic;
   color: #27ae60;
 }
