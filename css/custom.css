@@ -19,8 +19,9 @@
 
 .italic-text {
   font-style: italic;
-  color: #27ae60;
+  color: black;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .italic-text:hover {
