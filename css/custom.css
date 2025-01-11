@@ -16,9 +16,8 @@ body {
   padding: 0; /* Reset column padding */
 }
 
-.float-image {
-  width: 50%; /* Adjust based on your design */
-  height: auto; /* Maintain the aspect ratio */
+img.float-image {
+  margin: 0 20px 0 0; /* Add space only to the right */
 }
 
 h1.gradient-text {
