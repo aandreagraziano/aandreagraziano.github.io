@@ -23,7 +23,7 @@ body {
 .gradient-text {
   font-size: 2em;
   font-weight: normal; /* Non-bold text */
-  background: linear-gradient(to right, black 70%, yellow 30%); /* More black, less yellow */
+  background: linear-gradient(to right, black 40%, yellow 60%); /* More black, less yellow */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
