@@ -19,7 +19,16 @@ body {
   background-color: transparent; /* Keep the background color transparent on hover */
 }
 
-
+.shadow-text {
+  font-size: 2em;
+  font-weight: bold;
+  color: black; /* Base text color */
+  text-shadow: 
+    2px 2px 0 #ff0000,  /* Red shadow */
+    -2px -2px 0 #00ff00, /* Green shadow */
+    2px -2px 0 #0000ff,  /* Blue shadow */
+    -2px 2px 0 #ff00ff;  /* Magenta shadow */
+}
 
 .italic-text {
   font-style: italic;
