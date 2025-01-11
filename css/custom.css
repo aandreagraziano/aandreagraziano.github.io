@@ -22,7 +22,7 @@ body {
 .gradient-text {
   font-size: 2em;
   font-weight: bold;
-  background: linear-gradient(to right, #ff0000, #00ff00, #0000ff); /* Define your gradient colors */
+  background: linear-gradient(to right, yellow, blue, purple); /* Define your gradient colors */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
