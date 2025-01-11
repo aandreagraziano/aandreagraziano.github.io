@@ -19,15 +19,12 @@ body {
   background-color: transparent; /* Keep the background color transparent on hover */
 }
 
-.shadow-text {
+.gradient-text {
   font-size: 2em;
   font-weight: bold;
-  color: black; /* Base text color */
-  text-shadow: 
-    2px 2px 0 #ff0000,  /* Red shadow */
-    -2px -2px 0 #00ff00, /* Green shadow */
-    2px -2px 0 #0000ff,  /* Blue shadow */
-    -2px 2px 0 #ff00ff;  /* Magenta shadow */
+  background: linear-gradient(to right, #ff0000, #00ff00, #0000ff); /* Define your gradient colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .italic-text {
