@@ -1,5 +1,9 @@
 /** custom.css  */
 
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 .border-link {
   text-decoration: none;
   border: 1px solid #27ae60; /* Adjust the border thickness here (1px) */
