@@ -22,6 +22,7 @@ body {
 
 .gradient-text {
   font-size: 2em;
+  font-weight: normal;
   background: linear-gradient(to right, yellow, black); /* Black to yellow gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
