@@ -8,12 +8,19 @@
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      padding: 2em 1em;
+      max-width: 1000px;
+      margin: 0 auto;
     }
     .gallery-wrapper {
       position: relative;
       overflow: hidden;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 60vh;
+      margin: 2em 0;
     }
     .gallery {
       display: flex;
@@ -26,6 +33,7 @@
       flex: 0 0 100%;
       scroll-snap-align: start;
       position: relative;
+      text-align: center;
     }
     .gallery-slide img {
       width: 100%;
@@ -33,54 +41,94 @@
       object-fit: contain;
       display: block;
     }
+    .caption {
+      margin-top: 0.5em;
+      font-weight: bold;
+    }
     .arrow {
       position: absolute;
       top: 50%;
-      width: 3em;
-      height: 3em;
+      width: 2.5em;
+      height: 2.5em;
       background: rgba(0,0,0,0.5);
       color: white;
       border: none;
       cursor: pointer;
       transform: translateY(-50%);
-      font-size: 2em;
-      line-height: 1;
+      font-size: 1.5em;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 10;
     }
-    .arrow.left { left: 1em; }
-    .arrow.right { right: 1em; }
+    .arrow.left { left: 0.5em; }
+    .arrow.right { right: 0.5em; }
   </style>
 </head>
 <body>
 
-  <div class="gallery-wrapper">
-    <button class="arrow left" onclick="scrollGallery(-1)">‹</button>
-    <div class="gallery" id="gallery">
-      <div class="gallery-slide">
-        <img src="images/photos/IMG_1676.jpeg" alt="Painting 1">
+  <div class="container">
+    <!-- Intro Text -->
+    <p>Welcome to my horizontal scrolling gallery. Use the arrows or swipe to view each painting.</p>
+
+    <!-- First Gallery -->
+    <div class="gallery-wrapper">
+      <button class="arrow left" onclick="scrollGallery('gallery1', -1)">‹</button>
+      <div class="gallery" id="gallery1">
+        <div class="gallery-slide">
+          <img src="images/photos/IMG_1676.jpeg" alt="Painting 1">
+          <div class="caption">Sunrise Over the Hills</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="images/photos/IMG_1777 (1).jpeg" alt="Painting 2">
+          <div class="caption">Times of Storm – Times of Peace (2025)</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="images/photos/IMG_1680.jpeg" alt="Painting 3">
+          <div class="caption">Resilience of a Sunflower</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="images/photos/IMG_1570.jpeg" alt="Painting 4">
+          <div class="caption">Abstract Reflection</div>
+        </div>
       </div>
-      <div class="gallery-slide">
-        <img src="images/photos/IMG_1777 (1).jpeg" alt="Painting 2">
-      </div>
-      <div class="gallery-slide">
-        <img src="images/photos/IMG_1680.jpeg" alt="Painting 3">
-      </div>
-      <div class="gallery-slide">
-        <img src="images/photos/IMG_1570.jpeg" alt="Painting 4">
-      </div>
-      <div class="gallery-slide">
-        <img src="images/photos/IMG_1715.jpeg" alt="Painting 5">
-      </div>
+      <button class="arrow right" onclick="scrollGallery('gallery1', 1)">›</button>
     </div>
-    <button class="arrow right" onclick="scrollGallery(1)">›</button>
+
+    <!-- Text Between Galleries -->
+    <p>Here is another set of works highlighting different themes and styles.</p>
+
+    <!-- Second Gallery -->
+    <div class="gallery-wrapper">
+      <button class="arrow left" onclick="scrollGallery('gallery2', -1)">‹</button>
+      <div class="gallery" id="gallery2">
+        <div class="gallery-slide">
+          <img src="images/photos/IMG_1715.jpeg" alt="Painting 5">
+          <div class="caption">Dreamscape</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="images/photos/IMG_1820.jpeg" alt="Painting 6">
+          <div class="caption">Whispering Trees</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="images/photos/IMG_1901.jpeg" alt="Painting 7">
+          <div class="caption">Echoes</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="images/photos/IMG_2002.jpeg" alt="Painting 8">
+          <div class="caption">Twilight Bloom</div>
+        </div>
+      </div>
+      <button class="arrow right" onclick="scrollGallery('gallery2', 1)">›</button>
+    </div>
+
+    <!-- Closing Text -->
+    <p>Thank you for exploring my work. Feel free to reach out for prints or commissions.</p>
   </div>
 
   <script>
-    const gallery = document.getElementById('gallery');
-    function scrollGallery(direction) {
+    function scrollGallery(id, direction) {
+      const gallery = document.getElementById(id);
       const slideWidth = gallery.clientWidth;
       gallery.scrollBy({ left: slideWidth * direction, behavior: 'smooth' });
     }
