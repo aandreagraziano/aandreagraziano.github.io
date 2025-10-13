@@ -1,66 +1,90 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Scrolling Gallery – Andrea Graziano</title>
+  <title>Horizontal Scrolling Gallery – Andrea Graziano</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    /* Container that scrolls vertically and snaps to children */
-    .snap-container {
-      height: 100vh;              /* full viewport height */
-      overflow-y: scroll;         /* enable vertical scroll */
-      scroll-snap-type: y mandatory;
+    body {
       margin: 0;
-      padding: 0;
+      font-family: 'Open Sans', sans-serif;
     }
-
-    /* Each slide fills viewport and snaps */
-    .snap-slide {
-      scroll-snap-align: start;
+    .gallery-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100vw;
       height: 100vh;
+    }
+    .gallery {
+      display: flex;
+      height: 100%;
+      scroll-behavior: smooth;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+    .gallery-slide {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      position: relative;
+    }
+    .gallery-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      width: 3em;
+      height: 3em;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transform: translateY(-50%);
+      font-size: 2em;
+      line-height: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #000;           /* fallback background */
+      z-index: 10;
     }
-
-    .snap-slide img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-
-    /* Optional: remove default body margin */
-    body {
-      margin: 0;
-    }
+    .arrow.left { left: 1em; }
+    .arrow.right { right: 1em; }
   </style>
 </head>
 <body>
 
-  <div class="snap-container">
-    <!-- Slide 1 -->
-    <section class="snap-slide">
-      <img src="images/photos/IMG_1676.jpeg" alt="Painting 1">
-    </section>
-    <!-- Slide 2 -->
-    <section class="snap-slide">
-      <img src="images/photos/IMG_1777 (1).jpeg" alt="Painting 2">
-    </section>
-    <!-- Slide 3 -->
-    <section class="snap-slide">
-      <img src="images/photos/IMG_1680.jpeg" alt="Painting 3">
-    </section>
-    <!-- Slide 4 -->
-    <section class="snap-slide">
-      <img src="images/photos/IMG_1570.jpeg" alt="Painting 4">
-    </section>
-    <!-- Slide 5 -->
-    <section class="snap-slide">
-      <img src="images/photos/IMG_1715.jpeg" alt="Painting 5">
-    </section>
+  <div class="gallery-wrapper">
+    <button class="arrow left" onclick="scrollGallery(-1)">‹</button>
+    <div class="gallery" id="gallery">
+      <div class="gallery-slide">
+        <img src="images/photos/IMG_1676.jpeg" alt="Painting 1">
+      </div>
+      <div class="gallery-slide">
+        <img src="images/photos/IMG_1777 (1).jpeg" alt="Painting 2">
+      </div>
+      <div class="gallery-slide">
+        <img src="images/photos/IMG_1680.jpeg" alt="Painting 3">
+      </div>
+      <div class="gallery-slide">
+        <img src="images/photos/IMG_1570.jpeg" alt="Painting 4">
+      </div>
+      <div class="gallery-slide">
+        <img src="images/photos/IMG_1715.jpeg" alt="Painting 5">
+      </div>
+    </div>
+    <button class="arrow right" onclick="scrollGallery(1)">›</button>
   </div>
+
+  <script>
+    const gallery = document.getElementById('gallery');
+    function scrollGallery(direction) {
+      const slideWidth = gallery.clientWidth;
+      gallery.scrollBy({ left: slideWidth * direction, behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
