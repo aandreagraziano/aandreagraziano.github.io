@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Scrolling Gallery – Andrea Graziano</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Container that scrolls vertically and snaps to children */
+    .snap-container {
+      height: 100vh;              /* full viewport height */
+      overflow-y: scroll;         /* enable vertical scroll */
+      scroll-snap-type: y mandatory;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Each slide fills viewport and snaps */
+    .snap-slide {
+      scroll-snap-align: start;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;           /* fallback background */
+    }
+
+    .snap-slide img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* Optional: remove default body margin */
+    body {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="snap-container">
+    <!-- Slide 1 -->
+    <section class="snap-slide">
+      <img src="images/photos/IMG_1676.jpeg" alt="Painting 1">
+    </section>
+    <!-- Slide 2 -->
+    <section class="snap-slide">
+      <img src="images/photos/IMG_1777 (1).jpeg" alt="Painting 2">
+    </section>
+    <!-- Slide 3 -->
+    <section class="snap-slide">
+      <img src="images/photos/IMG_1680.jpeg" alt="Painting 3">
+    </section>
+    <!-- Slide 4 -->
+    <section class="snap-slide">
+      <img src="images/photos/IMG_1570.jpeg" alt="Painting 4">
+    </section>
+    <!-- Slide 5 -->
+    <section class="snap-slide">
+      <img src="images/photos/IMG_1715.jpeg" alt="Painting 5">
+    </section>
+  </div>
+
+</body>
+</html>
