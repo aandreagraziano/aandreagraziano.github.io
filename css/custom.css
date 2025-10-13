@@ -41,3 +41,37 @@ body {
   font-weight: bold;
 }
 
+
+.arrow {
+  position: absolute;
+  bottom: 10%;               /* position below the image */
+  width: 2em;                /* smaller size */
+  height: 2em;
+  background: rgba(0, 0, 0, 0.3); /* more transparent */
+  color: #fff;
+  border: none;
+  border-radius: 50%;        /* make them circular */
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  z-index: 10;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.6);
+  transform: scale(1.1);
+}
+
+.arrow.left {
+  left: 50%;                 /* center below left half */
+  transform: translateX(-150%) translateY(0);
+}
+
+.arrow.right {
+  right: 50%;                /* center below right half */
+  transform: translateX(150%) translateY(0);
+}
+
